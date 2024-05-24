@@ -1,0 +1,34 @@
+
+name: CI
+
+
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "devops" branch
+  push:
+    branches: [ "devops" ]
+
+jobs:
+  BUILD:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Message
+        run: |
+          echo "Hello Build" 
+  TEST:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Message
+        run: |
+          echo "Hello from TEST"
+  PROD:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Message
+        run: |
+          echo "Hello from PROD"
