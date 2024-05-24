@@ -20,6 +20,7 @@ jobs:
           echo "Hello Build" 
   TEST:
     runs-on: ubuntu-latest
+    needs: BUILD
     steps:
       - uses: actions/checkout@v3
       - name: Message
@@ -27,6 +28,7 @@ jobs:
           echo "Hello from TEST"
   PROD:
     runs-on: ubuntu-latest
+    needs: TEST
     steps:
       - uses: actions/checkout@v3
       - name: Message
