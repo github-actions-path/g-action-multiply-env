@@ -28,6 +28,7 @@ jobs:
           echo "Hello from TEST"
   PROD:
     runs-on: ubuntu-latest
+    environment: PROD
     needs: TEST
     steps:
       - uses: actions/checkout@v3
